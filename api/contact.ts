@@ -3,6 +3,21 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// CORS - Only allow requests from your domain
+const allowedOrigins = [
+  'https://angel-godinez.com',
+  'https://www.angel-godinez.com'
+];
+
+function getCorsHeaders(origin: string | undefined) {
+  const isAllowed = origin && allowedOrigins.includes(origin);
+  return {
+    'Access-Control-Allow-Origin': isAllowed ? origin : '',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+}
+
 // Simple in-memory rate limiting (resets on cold start)
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
@@ -34,9 +49,41 @@ function sanitize(str: string): string {
   return str.trim().slice(0, 5000);
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const origin = req.headers.origin;
+  const corsHeaders = getCorsHeaders(origin);
+
+  // Set CORS headers
+  Object.entries(corsHeaders).forEach(([key, value]) => {
+    res.setHeader(key, value);
+  });
+
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Check origin
+  if (!origin || !allowedOrigins.includes(origin)) {
+    return res.status(403).json({ error: 'Forbidden' });
+  }
+
+  // Validate Content-Type
+  const contentType = req.headers['content-type'];
+  if (!contentType || !contentType.includes('application/json')) {
+    return res.status(415).json({ error: 'Content-Type must be application/json' });
   }
 
   // Rate limiting
@@ -72,9 +119,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       text: sanitizedMessage,
       html: `
         <h2>New Contact Message</h2>
-        <p><strong>From:</strong> ${sanitizedEmail}</p>
+        <p><strong>From:</strong> ${escapeHtml(sanitizedEmail)}</p>
         <hr />
-        <p>${sanitizedMessage.replace(/\n/g, '<br />')}</p>
+        <p>${escapeHtml(sanitizedMessage).replace(/\n/g, '<br />')}</p>
       `,
     });
 
