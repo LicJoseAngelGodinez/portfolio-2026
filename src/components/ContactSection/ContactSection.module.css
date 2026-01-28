@@ -102,8 +102,31 @@
   transition: box-shadow 0.2s;
 }
 
-.submitBtn:hover {
+.submitBtn:hover:not(:disabled) {
   box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.successMsg {
+  margin-top: 1rem;
+  color: #22c55e;
+  font-weight: 500;
+}
+
+.errorMsg {
+  margin-top: 1rem;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .socialLinks {
