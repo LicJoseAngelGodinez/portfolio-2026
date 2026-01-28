@@ -124,11 +124,11 @@ export function ContactSection() {
             )}
           </form>
           <div className={styles.socialLinks}>
-            <a className={styles.socialLink} href="#">
+            <a className={styles.socialLink} target="_blank" rel="noopener noreferrer" href="https://github.com/LicJoseAngelGodinez">
               <span aria-label="Visit my GitHub profile" className="material-symbols-outlined">terminal</span>
               GITHUB
             </a>
-            <a className={styles.socialLink} href="#">
+            <a className={styles.socialLink} target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/angelgodinez/">
               <span aria-label="Visit my LinkedIn profile" className="material-symbols-outlined">link</span>
               LINKEDIN
             </a>
