@@ -1,0 +1,1 @@
+export { WisdomSection } from './WisdomSection';

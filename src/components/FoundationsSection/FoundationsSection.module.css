@@ -1,0 +1,228 @@
+.section {
+  padding: 6rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 1.125rem;
+}
+
+.card {
+  display: grid;
+  gap: 2rem;
+  background-color: var(--surface-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+}
+
+/* Left Column */
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .cardLeft {
+    padding-right: 2.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  color: var(--react-blue);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.legacyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: rgba(234, 179, 8, 0.15);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  border-radius: 0.375rem;
+  color: #eab308;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.legacyBadge .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+/* Center Column */
+.cardCenter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .cardCenter {
+    padding: 0 2.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.columnIcon {
+  font-size: 1.25rem;
+  color: var(--react-blue);
+}
+
+.columnTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.objectivesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.objectiveItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.objectiveIcon {
+  font-size: 0.75rem;
+  color: var(--react-blue);
+  opacity: 0.7;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Right Column */
+.cardRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .cardRight {
+    padding-left: 2.5rem;
+  }
+}
+
+.bridgeVisual {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.bridgeDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 5rem;
+  color: #334155;
+  opacity: 0.3;
+}
+
+.techTransition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+}
+
+.legacyTech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.techDot {
+  color: #475569;
+}
+
+.transitionArrow {
+  font-size: 1.5rem;
+  color: var(--react-blue);
+  opacity: 0.7;
+}
+
+.modernTech {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--react-blue);
+}
