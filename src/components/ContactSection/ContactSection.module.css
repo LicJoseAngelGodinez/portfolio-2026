@@ -99,16 +99,46 @@
   border-radius: 0.5rem;
   font-weight: 700;
   color: var(--background-dark);
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.submitBtn:hover:not(:disabled) {
+.submitBtn:hover:not(:disabled):not(.sending):not(.success) {
   box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
 }
 
-.submitBtn:disabled {
+.submitBtn:disabled:not(.sending):not(.success) {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* Sending state - animated pulsing glow */
+.submitBtn.sending {
+  cursor: wait;
+  opacity: 1;
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(97, 218, 251, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.8), 0 0 50px rgba(97, 218, 251, 0.4);
+  }
+}
+
+/* Success state - green glow */
+.submitBtn.success {
+  background-color: #22c55e;
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
+  cursor: default;
+  opacity: 1;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.submitBtn.success:hover {
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+  background-color: var(--react-blue);
 }
 
 .successMsg {
