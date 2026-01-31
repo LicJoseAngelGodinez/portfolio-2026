@@ -63,7 +63,8 @@ export function FoundationsSection() {
                 </div>
                 <span className={`material-symbols-outlined ${styles.transitionArrow}`}>keyboard_double_arrow_down</span>
                 <div className={styles.modernTech}>
-                  <span>ES6+</span>
+                  <span>ES6</span>
+                  <span>+</span>
                   <span>TypeScript</span>
                 </div>
               </div>

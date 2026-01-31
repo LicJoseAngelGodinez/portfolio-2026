@@ -69,9 +69,8 @@
 .tag {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--react-blue);
-  padding: 0.25rem 0.75rem;
-  background-color: rgba(97, 218, 251, 0.05);
-  border-radius: 0.25rem;
-  border: 1px solid rgba(97, 218, 251, 0.2);
+  color: #94a3b8;
+  padding: 0.25rem 0.45rem;
+  border-radius: 0 0.15rem 0.15rem 0;
+  border-inline-start: 3px solid var(--react-blue);
 }

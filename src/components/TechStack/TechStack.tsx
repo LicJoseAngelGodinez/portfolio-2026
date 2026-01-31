@@ -1,12 +1,5 @@
 import styles from './TechStack.module.css';
-
-const technologies = [
-  { name: 'React', icon: 'hub', isPrimary: true },
-  { name: 'TypeScript', icon: 'data_object', isPrimary: false },
-  { name: 'Design Systems', icon: 'architecture', isPrimary: false },
-  { name: 'CSS (BEM / Modules)', icon: 'palette', isPrimary: false },
-];
-
+import { technologies } from '@/data/technologies';
 
 export function TechStack() {
   return (
@@ -19,10 +12,10 @@ export function TechStack() {
         <div className={styles.grid}>
           {technologies.map((tech) => (
             <div key={tech.name} className={styles.techItem}>
-              <div className={tech.isPrimary ? styles.techIconPrimary : styles.techIconSecondary}>
+              <div className={styles.techIcon}>
                 <span className="material-symbols-outlined">{tech.icon}</span>
               </div>
-              <span className={tech.isPrimary ? styles.techNamePrimary : styles.techNameSecondary}>
+              <span className={styles.techName}>
                 {tech.name}
               </span>
             </div>

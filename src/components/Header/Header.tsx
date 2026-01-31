@@ -18,8 +18,8 @@ export function Header() {
         <nav className={styles.nav}>
           <button className={styles.navLink} onClick={() => scrollToSection('stack')}>Tech Stack</button>
           <button className={styles.navLink} onClick={() => scrollToSection('wisdom')}>Wisdom</button>
-          <button className={styles.navLink} onClick={() => scrollToSection('realms')}>Realms</button>
           <button className={styles.navLink} onClick={() => scrollToSection('foundations')}>Foundations</button>
+          <button className={styles.navLink} onClick={() => scrollToSection('realms')}>Realms</button>
           <button className={styles.contactBtn} onClick={() => scrollToSection('contact')}>Contact</button>
         </nav>
       </div>

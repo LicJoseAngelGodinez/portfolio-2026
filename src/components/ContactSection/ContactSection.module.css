@@ -19,6 +19,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding-block: 6rem;
+  }
+}
+
 .glow {
   position: absolute;
   top: -5rem;

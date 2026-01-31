@@ -19,7 +19,7 @@ export function HeroSection() {
           Pragmatic frontend development since 2017. Functionality first, refactor second.
         </p>
         <div className={styles.buttons}>
-          <button className={styles.primaryBtn} onClick={() => scrollToSection('realms')}>
+          <button className={styles.primaryBtn} onClick={() => scrollToSection('stack')}>
             <span className="material-symbols-outlined">bolt</span>
             View My Code
           </button>

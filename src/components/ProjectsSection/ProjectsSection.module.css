@@ -56,6 +56,9 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background-color: var(--surface-dark);
   border-radius: 0.75rem;
   overflow: hidden;
@@ -68,42 +71,11 @@
   transform: translateY(-4px);
 }
 
-.imageWrapper {
-  height: 12rem;
-  background-color: #0a1628;
-  position: relative;
-  overflow: hidden;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.4;
-  transition: transform 0.7s, opacity 0.3s;
-}
-
-.card:hover .image {
-  transform: scale(1.1);
-  opacity: 0.5;
-}
-
-.imageOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, var(--surface-dark) 10%, transparent 100%);
-}
-
-.cardIcon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  color: var(--react-blue);
-  opacity: 0.9;
-}
-
 .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
   padding: 1.5rem 1.5rem 1.75rem;
 }
 
@@ -197,25 +169,3 @@
   color: var(--react-blue);
 }
 
-.arrowBtn {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid rgba(97, 218, 251, 0.3);
-  color: var(--react-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-
-.arrowBtn:hover {
-  background-color: rgba(97, 218, 251, 0.1);
-  border-color: var(--react-blue);
-}
-
-.arrowBtn .material-symbols-outlined {
-  font-size: 1.25rem;
-}

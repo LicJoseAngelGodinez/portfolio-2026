@@ -28,20 +28,7 @@
   padding: 2rem;
   background-color: var(--surface-dark);
   border: 1px solid rgba(97, 218, 251, 0.2);
-  border-radius: 1rem;
-}
-
-.container::before {
-  content: "\16A0 \16A2 \16A6 \16A8 \16B1 \16B2";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--background-dark);
-  padding: 0 10px;
-  color: var(--gold-leaf);
-  font-size: 0.75rem;
-  letter-spacing: 0.2rem;
+  border-radius: .5rem;
 }
 
 .grid {
@@ -63,61 +50,22 @@
   gap: 1rem;
 }
 
-.techIconPrimary {
-  width: 5rem;
-  height: 5rem;
+.techIcon {
+  width: 3rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(97, 218, 251, 0.1);
-  border-radius: 50%;
-  border: 2px solid var(--react-blue);
-  box-shadow: 0 0 20px rgba(97, 218, 251, 0.2);
+  border-block-end: 2px solid var(--react-blue);
 }
 
-.techIconPrimary .material-symbols-outlined {
+.techIcon .material-symbols-outlined {
   font-size: 2.25rem;
   color: var(--react-blue);
 }
 
-.techIconSecondary {
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 0.5rem;
-  transition: all 0.2s;
-}
-
-.techItem:hover .techIconSecondary {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.techIconSecondary .material-symbols-outlined {
-  font-size: 1.875rem;
-  color: #94a3b8;
-  transition: color 0.2s;
-}
-
-.techItem:hover .techIconSecondary .material-symbols-outlined {
-  color: white;
-}
-
-.techNamePrimary {
+.techName {
   font-weight: 700;
-  font-size: 1.125rem;
-}
-
-.techNameSecondary {
-  font-weight: 500;
-  color: #94a3b8;
-  transition: color 0.2s;
-}
-
-.techItem:hover .techNameSecondary {
-  color: white;
+  font-size: 1rem;
+  text-align: center;
 }
