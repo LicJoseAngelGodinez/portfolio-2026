@@ -1,12 +1,15 @@
+import { useLanguage } from '@/i18n';
 import styles from './TechStack.module.css';
 import { technologies } from '@/data/technologies';
 
 export function TechStack() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.section} id="stack">
       <div className={styles.header}>
-        <h2 className={styles.title}>The Great Forge</h2>
-        <p className={styles.subtitle}>The stack I use when building production-grade frontend applications.</p>
+        <h2 className={styles.title}>{t('techStack.title') as string}</h2>
+        <p className={styles.subtitle}>{t('techStack.subtitle') as string}</p>
       </div>
       <div className={styles.container}>
         <div className={styles.grid}>

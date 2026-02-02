@@ -16,6 +16,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: .5rem;
+}
+
+.navContent {
+  display: inline-flex;
+  justify-content: space-around;
+  gap: 1rem;
+  
 }
 
 .logo {
@@ -71,4 +79,32 @@
 
 .contactBtn:hover {
   background-color: rgba(97, 218, 251, 0.2);
+}
+
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.05rem;
+}
+
+.langBtn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.2s;
+  padding: 0.25rem 0.375rem;
+}
+
+.langBtn:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.langActive {
+  color: var(--react-blue);
+  font-weight: 700;
+}
+
+.langSep {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.2);
 }

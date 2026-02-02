@@ -1,29 +1,26 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/i18n';
 import styles from './NotFound.module.css';
 
 export function NotFound() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.container}>
       <div className={styles.glow} />
       <div className={styles.content}>
         <div className={styles.errorCode}>404</div>
-        <h1 className={styles.title}>Lost in the Void</h1>
-        <div className={styles.runes}>
-          <span>&#5765;</span>
-          <span>&#5766;</span>
-          <span>&#5768;</span>
-        </div>
+        <h1 className={styles.title}>{t('notFound.title') as string}</h1>
         <p className={styles.description}>
-          The realm you seek has vanished into the mists of Niflheim.
-          Perhaps the Norns have woven a different path for you.
+          {t('notFound.description') as string}
         </p>
         <Link to="/" className={styles.homeLink}>
           <span className="material-symbols-outlined">home</span>
-          Return to Midgard
+          {t('notFound.homeLink') as string}
         </Link>
         <div className={styles.wolves}>
           <span className={`material-symbols-outlined ${styles.wolfIcon}`}>pets</span>
-          <span className={styles.wolfText}>Geri and Freki will guide you home</span>
+          <span className={styles.wolfText}>{t('notFound.wolves') as string}</span>
           <span className={`material-symbols-outlined ${styles.wolfIcon}`}>pets</span>
         </div>
       </div>
